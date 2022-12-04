@@ -50,23 +50,17 @@ send.onclick = funct();
 
     send.addEventListener('click', function() {
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://discord.com/api/webhooks/1049038512911040702/jGPIvXr3E4Jm2C2VjVLyaJfJbVVbr_bvMG9HsEZPkPpApD1c-y6KJuAQOKLXH8S_SsNC', true);
+  xhr.open('POST', 'https://discord.com/api/webhooks/1049067093317922827/HejOz8SNmdtp6j6K3yRp1BQSgjyntJt2qJWWIEp8yfdN1jUh7cxT2vJIFdLaAKnBVMJM', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify({
     username: username.value,
-    content: message.value}
+    content: message.value
+  }
   ));
-setTimeout(1000)
-wait(4000);
 });
 
     
-    setTimeout(function() {
-    button.disabled = false;
-  }, 2000);
-  button.disabled = true;
-};
-document.body.appendChild(button);
+   
     
     
 document.body.appendChild(send);
