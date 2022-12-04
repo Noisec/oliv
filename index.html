@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+
+<script>
+
+
+/* theres an big title that says 'Olivia üzenő', and a messagebox named 'username' that have an dark gray background color and white text color, another messagebox named 'message' that have an dark gray background color and white text color and centered, and a button that says 'send' that is have an black background color. and these elements are in the middle of the page (centered), have a very thin dark border, the background color is dark grey of these elements, and the forecolor is white and centered. and if the send button clicked, the text from the message messagebox will be sent into the discord channel '913883330032836621' trough the webhook 'https://discord.com/api/webhooks/1049038512911040702/jGPIvXr3E4Jm2C2VjVLyaJfJbVVbr_bvMG9HsEZPkPpApD1c-y6KJuAQOKLXH8S_SsNC' and the bot's name will be the username messagebox's text. and all the elements in the html have black 1px border and the have dark gray background color.  + KICSIT MÓDOSÍTVA*/
+
+function redirectMe(url) {
+    window.location = url;
+}
+
+var title = document.createElement('h1');
+title.innerHTML = 'Olivia üzenő';
+title.style.textAlign = 'center';
+title.style.color = '#000000';
+title.style.forecolor = '#000000';
+
+
+document.body.appendChild(title);
+var username = document.createElement('input');
+username.setAttribute('type', 'text');
+username.setAttribute('name', 'username');
+username.setAttribute('placeholder', 'Felhasználónév');
+username.style.backgroundColor = '#333333';
+username.style.color = '#ffffff';
+username.style.textAlign = 'center';
+username.style.border = '1px solid #000000';
+document.body.appendChild(username);
+var message = document.createElement('input');
+message.setAttribute('type', 'text');
+message.setAttribute('name', 'message');
+message.setAttribute('placeholder', 'Üzenet');
+message.style.backgroundColor = '#333333';
+message.style.color = '#ffffff';
+message.style.textAlign = 'center';
+message.style.border = '1px solid #000000';
+document.body.appendChild(message);
+var send = document.createElement('button');
+send.innerHTML = 'Küldés';
+send.style.backgroundColor = '#000000';
+send.style.color = '#ffffff';
+send.style.textAlign = 'center';
+send.style.border = '1px solid #000000';
+send.addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://discord.com/api/webhooks/1049038512911040702/jGPIvXr3E4Jm2C2VjVLyaJfJbVVbr_bvMG9HsEZPkPpApD1c-y6KJuAQOKLXH8S_SsNC', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({
+    username: username.value,
+    content: message.value
+  }));
+});
+document.body.appendChild(send);
+document.body.style.backgroundColor = '#333333';
+
+document.body.style.textAlign = 'center';
+document.body.style.background = 'linear-gradient(to bottom, #00ffff 1%, #0066ff 100%) fixed';
+username.style.backgroundColor = '#444444';
+username.style.color = '#ffffff';
+username.style.border = 'thin solid #000000';
+username.style.width = '200px';
+username.style.height = '50px';
+username.style.margin = 'auto';
+username.style.display = 'block';
+message.style.backgroundColor = '#444444';
+message.style.color = '#ffffff';
+message.style.border = 'thin solid #000000';
+message.style.width = '200px';
+message.style.height = '50px';
+message.style.margin = 'auto';
+message.style.display = 'block';
+send.style.backgroundColor = '#444444';
+send.style.color = '#ffffff';
+send.style.border = 'thin solid #000000';
+send.style.width = '205px';
+send.style.height = '50px';
+send.style.margin = 'auto';
+send.style.display = 'block';
+
+
+
+
+
+
+</script>
+</body>
+</html>
