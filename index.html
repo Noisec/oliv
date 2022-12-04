@@ -46,7 +46,9 @@ send.style.backgroundColor = '#000000';
 send.style.color = '#ffffff';
 send.style.textAlign = 'center';
 send.style.border = '1px solid #000000';
-send.addEventListener('click', function() {
+send.onclick = funct();
+
+    send.addEventListener('click', function() {
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://discord.com/api/webhooks/1049038512911040702/jGPIvXr3E4Jm2C2VjVLyaJfJbVVbr_bvMG9HsEZPkPpApD1c-y6KJuAQOKLXH8S_SsNC', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
@@ -57,6 +59,16 @@ send.addEventListener('click', function() {
 setTimeout(1000)
 wait(4000);
 });
+
+    
+    setTimeout(function() {
+    button.disabled = false;
+  }, 2000);
+  button.disabled = true;
+};
+document.body.appendChild(button);
+    
+    
 document.body.appendChild(send);
 document.body.style.backgroundColor = '#333333';
 
