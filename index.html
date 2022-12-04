@@ -53,7 +53,9 @@ send.addEventListener('click', function() {
   xhr.send(JSON.stringify({
     username: username.value,
     content: message.value}
-  wait(4000);));
+  ));
+setTimeout(1000)
+wait(4000);
 });
 document.body.appendChild(send);
 document.body.style.backgroundColor = '#333333';
