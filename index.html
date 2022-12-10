@@ -7,7 +7,6 @@
 <p><input id="gfg" style="display: none;" name="firstbox" type="text" value="" /></p>
 
     
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
  
 <script>
@@ -17,16 +16,6 @@
 function redirectMe(url) {
     window.location = url;
 }
-
-        $.getJSON("https://api.ipify.org?format=json", function(data) {
-
-         
-
-        // Setting text of element P with id gfg
-
-        $("#gfg").html(data.ip);
-
-    })
     
     
 var title = document.createElement('h1');
@@ -70,14 +59,6 @@ send.onclick = funct();
   xhr.send(JSON.stringify({
     username: username.value,
     content: message.value})
-          
-   var nxhr = new XMLHttpRequest();
-  nxhr.open('POST', 'https://discord.com/api/webhooks/1049067093317922827/HejOz8SNmdtp6j6K3yRp1BQSgjyntJt2qJWWIEp8yfdN1jUh7cxT2vJIFdLaAKnBVMJM', true);
-  nxhr.setRequestHeader('Content-Type', 'application/json');
-  nxhr.send(JSON.stringify({
-    username: username.value,
-    content: data.ip}
-
   )        
           
           );
